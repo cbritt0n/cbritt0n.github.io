@@ -237,6 +237,7 @@ footer .footerNote {
 	line-height: 18px;
 	color: white;
 	font-weight: 700;
+	padding-bottom: 10px;
 }
 footer .footerNote span {
 	color: white;
@@ -332,10 +333,9 @@ header .profileLogo .logoPlaceholder {
 	font-family: 'Montserrat', sans-serif;
 }
 header .profilePhoto {
-	float: left;
 	clear: both;
-	margin-right: 3%;
-	margin-top: 5%;
+	margin-left: auto;
+  	margin-right: auto;
 }
 header .profileHeader {
 	text-align: left;
