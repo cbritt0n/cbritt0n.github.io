@@ -1,9 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Christian Britton - Software Engineer and Developer">
     <title>Christian Britton</title>
 
     <link rel="icon" type="image/png" href="resources/images/profile.jpg">
@@ -11,132 +10,153 @@
   </head>
 
   <body>
-    <nav class="sticky-container" aria-label="Social Media">
+
+    <!-- Sticky social media icons -->
+    <div class="sticky-container" aria-label="Social Media">
       <ul class="sticky">
         <li>
-          <a href="http://www.github.com/cbritt0n" target="_blank">
-            <img src="resources/images/github.png" width="32" height="32" alt="GitHub">
-          </a>
+          <a href="http://www.github.com/cbritt0n" target="_blank"><img src="resources/images/github.png" width="32" height="32"></a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/cbritt0n" target="_blank">
-            <img src="resources/images/linkedin.svg" width="32" height="32" alt="LinkedIn">
-          </a>
+          <a href="https://www.linkedin.com/in/cbritt0n" target="_blank"><img src="resources/images/linkedin.svg" width="32" height="32"></a>
         </li>
         <li>
-          <a href="resources/downloads/Christian-Britton.pdf" target="_blank">
-            <img src="resources/images/cv.gif" width="32" height="32" alt="Download CV">
-          </a>
+          <a href="resources/downloads/Christian-Britton.pdf" target="_blank"><img src="resources/images/cv.gif" width="32" height="32"></a>
         </li>
       </ul>
-    </nav>
+    </div>
       
+    <!-- Profile Header content -->
     <header>
-      <!-- Profile photo and details -->
+      <!-- Profile photo --> 
       <div class="profilePhoto"> 
-        <img src="resources/images/profile.jpg" alt="Christian Britton Profile Picture" width="200" height="200">
+        <img src="resources/images/profile.jpg" style="border-radius: 50%;" alt="Profile Picture" height="200" width="200">
       </div>
 
+      <!-- Profile details -->
       <div class="profileHeader">
         <h1><a href="mailto:brittonca@icloud.com">Christian Britton</a></h1>
-        <h3>Software Engineer at Cox Communications, former Cyber Security student and researcher at UGA</h3>
+        <h3>Software Engineer at Cox Communications, former Cyber Security student and reseacher at UGA</h3>
       </div>
     </header>
 
-    <main>
-      <section class="section2">
-        <article class="education">
-          <h2 class="sectionTitle">Education</h2>
-          <hr class="sectionTitleRule">
-          <div class="section2Content">
-            <div class="education-item" style="display: flex; align-items: center;">
-              <img src="resources/images/ugalogo.png" alt="UGA Logo" height="55" width="50">
-              <div style="margin-left: 10px;">
-                <h2 class="sectionContentTitle">University of Georgia</h2>
-                <h3 class="sectionContentSubTitle"><strong>Master's Degree in Computer Science | 2019 - 2021</strong></h3>
-                <p class="sectionContent"><strong>Notable Courses:</strong> Cyber Forensics, Secure Programming, IoT Security, Cyber Security, Computer Networks, Advanced Algorithms, Approximation Algorithms, Computer Finance, Parallel Simulation, and Financial Market Simulation</p>
-                <p class="sectionContent"><strong>Project Experience:</strong> Rust, Python, C++, C#, C, Java, JavaScript, Socket Programming, Spring</p>
-              </div>
-            </div>
-            <div class="education-item">
-              <h3 class="sectionContentSubTitle"><strong>Bachelor's Degree in Computer Science | 2016 - 2020</strong></h3>
-              <p class="sectionContent"><strong>Notable Courses:</strong> Computer Networks, Operating Systems, Human-Computer Interaction, Computer Architecture, Algorithms, and Software Development</p>
-              <p class="sectionContent"><strong>Project Experience:</strong> Python, C++, C, Java, JavaScript, Perl, Spring</p>
-            </div>
-          </div>
-        </article>
+    <br />
 
-        <article class="experience">
-          <h2 class="sectionTitle">Experience</h2>
-          <hr class="sectionTitleRule">
-          <div class="section2Content">
-            <div class="experience-item">
-              <h2 class="sectionContentTitle">Cox Communications</h2>
-              <h3 class="sectionContentSubTitle"><strong>Software Engineer II | 2021 - Present</strong></h3>
-              <ul class="sectionContent">
-                <li>Develop and maintain an internal Sales Communications and Knowledge Management (KM) platform using Python, HTML, CSS, JavaScript, and JQuery.</li>
-                <li>Adhere to Model-View-Controller (MVC) principles throughout the project.</li>
-                <li>Utilize CI/CD via Jenkins for environment deployments.</li>
-                <li>Lead migration to Google Cloud Platform (GCP, Anthos) for streamlined deployment and scalability.</li>
-                <li>Manage cross-team projects and incorporate agile methodologies.</li>
-                <li>Implement and monitor security protocols with Prisma Cloud Monitoring.</li>
-                <li>Perform DevOps tasks using Kubernetes and Docker.</li>
-                <li>Conduct detailed User Acceptance Testing to ensure quality deployments.</li>
-                <li>Enhance system functionality by integrating REST APIs.</li>
-                <li>Gather feedback and drive continuous improvements.</li>
-                <li>Collaborate with Content Admins and Sales teams to improve KM solutions.</li>
-                <li>Analyze data for actionable insights to improve performance.</li>
-                <li>Deploy agile practices with tools like Jira.</li>
-                <li>Implement a Graph Database (GDB) incorporating Machine Learning.</li>
-                <li>Introduce New Relic for comprehensive monitoring.</li>
-                <li>Participate in Change Advisory Board meetings.</li>
-                <li>Engage with Python communities to expand expertise.</li>
-                <li>Continuously update security knowledge regarding new CVEs.</li>
-                <li>Optimize Python scripts for improved workflows.</li>
-              </ul>
-            </div>
+    <!-- Main content -->
+    <div class="section2">
 
-            <div class="experience-item">
-              <h2 class="sectionContentTitle">Barrow County School System</h2>
-              <h3 class="sectionContentSubTitle"><strong>Technical Analyst | 2018 - 2021</strong></h3>
-              <ul class="sectionContent">
-                <li>Maintained district devices from desktops to VR setups, ensuring technology readiness.</li>
-                <li>Enhanced classroom learning through targeted tech integration.</li>
-                <li>Supported diverse tech systems and managed user accounts for Google and Office 365.</li>
-                <li>Earned multiple accolades for outstanding performance.</li>
-              </ul>
-            </div>
+      <!-- Education  -->
+      <h2 class="sectionTitle">Education</h2>
+      <hr class="sectionTitleRule">
+      <hr class="sectionTitleRule2">
 
-            <div class="experience-item">
-              <h2 class="sectionContentTitle">Barrow County School System</h2>
-              <h3 class="sectionContentSubTitle"><strong>ITS Intern | 2016 - 2018</strong></h3>
-              <ul class="sectionContent">
-                <li>Maintained and repaired district computer systems including Windows, Chromebooks, and Mac devices.</li>
-                <li>Supported interactive projector systems and classroom tech integrations.</li>
-                <li>Assisted teachers with classroom technology requirements.</li>
-                <li>Managed devices via the Chrome Management Console and AirWatch.</li>
-                <li>Contributed to the rollout of a new streaming platform for elementary schools.</li>
-                <li>Facilitated multimedia presentations using Adobe Creative Cloud.</li>
-              </ul>
-            </div>
+      <div class="section2Content">
+        <!-- UGA - Master's -->
+        <div style='display: inline-flex;'>
+          <div class='child'><img src="resources/images/ugalogo.png" alt="UGA Logo" height="55" width="50"></div>
+          <div class='child'><h2 class="sectionContentTitle">University of Georgia</h2></div>
+        </div>
+        <h3 class="sectionContentSubTitle"><strong>Master's Degree in Computer Science | 2019 - 2021</strong></h3>
+        <p class="sectionContent"><strong>Notable Courses:</strong> Cyber Forensics, Secure Programming, IoT Security, Cyber Security, Computer Networks, Advanced Algorithms, Approximation Algorithms, Computer Finance, Parallel Simulation, and Financial Market Simulation</p>
+        <p class="sectionContent"><strong>Project Experience:</strong> Rust, Python, C++, C#, C, Java, JavaScript, Socket Programming, Spring</p>
 
-            <div class="experience-item">
-              <h2 class="sectionContentTitle">Barrow County School System</h2>
-              <h3 class="sectionContentSubTitle"><strong>Networking Intern | 2014 - 2016</strong></h3>
-              <ul class="sectionContent">
-                <li>Bridged communication between Technology and Teaching departments.</li>
-                <li>Provided support for Chromebooks and iPads to enhance educational experiences.</li>
-                <li>Assisted in the maintenance and repair of district computer systems.</li>
-                <li>Conducted training on new educational technologies for teachers.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </section>
-    </main>
+        <br />
+
+        <!-- UGA - Bachelor's -->
+        <h3 class="sectionContentSubTitle"><strong>Bachelor's Degree in Computer Science | 2016 - 2020</strong></h3>
+        <p class="sectionContent"><strong>Notable Courses:</strong> Computer Networks, Operating Systems, Human-Computer Interaction, Computer Architecture, Algorithms, and Software Development</p>
+        <p class="sectionContent"><strong>Project Experience:</strong> Python, C++, C, Java, JavaScript, Perl, Spring</p>
+      </div>
+
+      <br />
+
+      <!-- Work Experience -->
+      <h2 class="sectionTitle">Experience</h2>
+      <hr class="sectionTitleRule">
+      <hr class="sectionTitleRule2">
+
+      <div class="section2Content">
+        <!-- Cox Communications -->
+        <h2 class="sectionContentTitle">Cox Communications</h2>
+        <h3 class="sectionContentSubTitle"><strong>Software Engineer II | 2021 - Present</strong></h3>
+        <ul class="sectionContent" style="padding-inline-start: 15px;">
+          <li>Develop, evolve, and maintain an internal Sales Communications and Knowledge Management (KM) platform that is written in Python, HTML, CSS, JavaScript, and JQuery and is utilized by frontline, 3rd party, and retail Sales Agents</li>
+          <li>Maintain strict Model-View-Controller (MVC) principles across the whole team's tech stack</li>
+          <li>Utilizing CI/CD fundamentals, maintained a deployment pipeline through Development, Quality Assurance, and Production environments via Jenkins Pipeline</li>
+          <li>Led the PaaS environment migration from Rancher to Google Cloud Platform (GCP, Anthos), streamlining deployment processes, reducing downtime, and ensuring robust infrastructure scalability</li>
+          <li>Take the lead on multiple projects that require input from internal and 3rd party teams</li>
+          <li>Executed meticulous security protocols and continuous system monitoring via an internal security suite and Prisma Cloud Monitoring, safeguarding data integrity and enhancing platform reliability</li>
+          <li>Perform DevOps maintenance and patching for the team's managed systems using Kubernetes and Docker</li>
+          <li>Conducted meticulous User Acceptance Testing, ensuring high-quality deployments and minimizing post-launch issues across environments</li>
+          <li>Use and provide feedback on REST APIs from multiple internal and external services to ingest KM content, provide translation services, allow user profile services, etc.</li>
+          <li>Gather feedback from key stakeholders, create user stories, and seek to improve the functionalities of the KM system</li>
+          <li>Partner with Content Admins to better understand and evolve their use of the KM platform</li>
+          <li>Partner with other Sales teams to produce KM solutions</li>
+          <li>Leverage data analytics to compile actionable metrics, driving informed decision-making and continuous improvement in Sales Agent performance</li>
+          <li>Provide weekly and monthly metric updates for pertinent KPIs</li>
+          <li>Implemented agile methodologies, enhancing team efficiency and project delivery timelines, utilizing Jira for streamlined task management</li>
+          <li>Pioneer a Graph Database (GDB) implementation, harnessing Machine Learning to unlock valuable insights from Agent-produced data and enhance system capabilities</li>
+          <li>Onboard New Relic as an Application and Infrastructure Monitoring tool across all non-production and production environments</li>
+          <li>Participate in weekly Change Advisory Board meetings to inform leaders about changes to company software environments as well as any degradations of Sales-related services</li>
+          <li>Participate in the Python@Cox group to partner with other teams and expand understanding of the Python coding language</li>
+          <li>Maintain a constantly developing understanding of the newest Common Vulnerabilities and Exposures (CVEs)</li>
+          <li>Work with multiple mentors to expand Sales, Business, and technology-related knowledge</li>
+          <li>Enhanced system efficiency by optimizing Python scripts and improving knowledge management workflows for seamless sales operations</li>
+          <li>Collaborated with cross-functional teams to integrate third-party APIs, optimizing the KM platform's functionality and enhancing user experience</li>
+          <li>Foster cross-functional partnerships, leading multi-team projects and aligning stakeholder needs to deliver impactful Knowledge Management solutions</li>
+        </ul>
+        
+        <br />
+
+        <!-- Barrow County School System - Technical Analyst -->
+        <h2 class="sectionContentTitle">Barrow County School System</h2>
+        <h3 class="sectionContentSubTitle"><strong>Technical Analyst | 2018 - 2021</strong></h3>
+        <ul class="sectionContent" style="padding-inline-start: 15px;">
+          <li>Provide maintenance to district devices including but not limited to desktop computers, laptop computers, Chromebooks, switches, Virtual Reality setups, and monitors</li>
+          <li>Facilitated tech integration in classrooms, enhancing educational experiences and fostering teacher collaboration for enriched learning</li>
+          <li>Spearheaded maintenance of diverse tech systems, from VR setups to broadcast studios, fostering a cutting-edge learning environment</li>
+          <li>Partnered with teachers to integrate technology in classrooms, aligning tech solutions with lesson plans for enriched, student-centered learning experiences</li>
+          <li>Understand lesson plans and how to provide students with a technology rich lesson</li>
+          <li>Diagnosed and resolved complex networking issues, maintaining high reliability of wireless networks and VoIP systems across the district</li>
+          <li>Managed user accounts across Google and Office 365 platforms, ensuring seamless access and support for both teachers and students</li>
+          <li>Received 8 “Shining Moments” awards from the Sims Academy of Innovation and Technology</li>
+        </ul>
+
+        <br />
+
+        <!-- Barrow County School System - ITS Intern -->
+        <h2 class="sectionContentTitle">Barrow County School System</h2>
+        <h3 class="sectionContentSubTitle"><strong>ITS Intern | 2016 - 2018</strong></h3>
+        <ul class="sectionContent" style="padding-inline-start: 15px;">
+          <li>Assisted in the day-to-day maintenance and repair of all district computer systems. This includes Windows devices, both desktops and notebooks, Chromebooks, and Mac hardware</li>
+          <li>Maintained, repaired, and mounted interactive projector systems used for instruction</li>
+          <li>Work directly with teachers to address specific needs regarding how technology is used within their classroom</li>
+          <li>Provided support for Chromebooks and iPads. This includes the use of the Chrome Management Console to help manage chrome devices and district G-Suite Accounts as well as using AirWatch for managing iPads and app deployment.</li>
+          <li>Supported a new streaming platform being rolled out to Elementary Schools.</li>
+          <li>Helped schools create audio and video presentations of schools using Adobe Creative Cloud.</li>
+        </ul>
+
+        <br />
+
+        <!-- Barrow County School System - Networking Intern -->
+        <h2 class="sectionContentTitle">Barrow County School System</h2>
+        <h3 class="sectionContentSubTitle"><strong>Networking Intern | 2014 - 2016</strong></h3>
+        <ul class="sectionContent" style="padding-inline-start: 15px;">
+          <li>Served as a bridge between the Technology and Teaching and Learning departments.</li>
+          <li>Delivered comprehensive hardware and software support for Chromebooks and iPads, ensuring optimal functionality for educational activities.</li>
+          <li>Contributed to the meticulous maintenance and repair of district-wide computer systems, minimizing downtime and maximizing resource availability.</li>
+          <li>Developed and conducted training sessions on new educational technologies, empowering teachers to effectively integrate digital tools in classrooms.</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <br />
+
+    <hr class="sectionTitleRule">
 
     <footer>
-      <div class="footerNote">Website made by Christian Britton and hosted on GitHub Pages</div>
+      <div class="footerNote">Website made by Christian Britton and hosted on Github Pages</div>
     </footer>
   </body>
 </html>
