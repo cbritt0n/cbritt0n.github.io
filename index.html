@@ -11,6 +11,25 @@
 
   <body>
 
+    <!-- Hamburger menu (top-left) -->
+    <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="sideMenu">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Side navigation menu -->
+    <nav id="sideMenu" class="side-menu" aria-hidden="true">
+      <div class="side-menu-inner">
+        <button id="sideClose" class="side-close" aria-label="Close menu">×</button>
+        <h3 class="menu-section-title">Active Projects</h3>
+        <ul class="menu-list">
+          <li><a href="https://github.com/cbritt0n/mcp-auth-py" target="_blank" rel="noopener">mcp-auth-py</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
     <!-- Sticky social media icons -->
     <div class="sticky-container">
       <ul class="sticky">
@@ -158,5 +177,57 @@
     <footer>
       <div class="footerNote">Website made by Christian Britton and hosted on Github Pages</div>
     </footer>
+    
+    <script>
+      (function(){
+        var hamburger = document.getElementById('hamburger');
+        var sideMenu = document.getElementById('sideMenu');
+        var sideClose = document.getElementById('sideClose');
+        var firstLink = sideMenu && sideMenu.querySelector('.menu-list a');
+        var lastFocused = null;
+
+        function openMenu(){
+          lastFocused = document.activeElement;
+          sideMenu.classList.add('open');
+          hamburger.classList.add('open');
+          hamburger.setAttribute('aria-expanded','true');
+          hamburger.setAttribute('aria-hidden','true');
+          sideMenu.setAttribute('aria-hidden','false');
+          if(firstLink) firstLink.focus();
+        }
+
+        function closeMenu(){
+          sideMenu.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded','false');
+          hamburger.setAttribute('aria-hidden','false');
+          sideMenu.setAttribute('aria-hidden','true');
+          if(lastFocused) lastFocused.focus();
+        }
+
+        if(hamburger){
+          hamburger.addEventListener('click', function(e){
+            var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+            if(expanded) closeMenu(); else openMenu();
+          });
+        }
+
+        if(sideClose){ sideClose.addEventListener('click', closeMenu); }
+
+        // Close on Escape
+        document.addEventListener('keydown', function(e){
+          if(e.key === 'Escape' && sideMenu.classList.contains('open')){ closeMenu(); }
+        });
+
+        // Close when clicking outside the menu
+        document.addEventListener('click', function(e){
+          if(!sideMenu.classList.contains('open')) return;
+          var target = e.target;
+          if(target === hamburger || hamburger.contains(target)) return;
+          if(sideMenu.contains(target)) return;
+          closeMenu();
+        });
+      })();
+    </script>
   </body>
 </html>
