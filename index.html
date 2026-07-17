@@ -1,16 +1,19 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Christian Britton — Software Engineer II at Cox Communications. Cloud, CI/CD, and AI systems.">
     <title>Christian Britton</title>
 
     <link rel="icon" type="image/png" href="resources/images/profile.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="resources/styles/index.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
-
     <!-- Hamburger menu (top-left) -->
     <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="sideMenu">
       <span class="hamburger-box">
@@ -18,215 +21,306 @@
       </span>
     </button>
 
+    <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+
     <!-- Side navigation menu -->
-    <nav id="sideMenu" class="side-menu" aria-hidden="true">
+    <nav id="sideMenu" class="side-menu" aria-hidden="true" aria-label="Active projects">
       <div class="side-menu-inner">
-        <button id="sideClose" class="side-close" aria-label="Close menu">×</button>
+        <button id="sideClose" class="side-close" aria-label="Close menu">&times;</button>
         <h3 class="menu-section-title">Active Projects</h3>
         <ul class="menu-list">
-          <li><a href="https://github.com/cbritt0n/mcp-auth-py" target="_blank" rel="noopener">mcp-auth-py</a></li>
-          <li><a href="https://github.com/cbritt0n/loggem" target="_blank" rel="noopener">loggem</a></li>
+          <li><a href="https://github.com/cbritt0n/mcp-auth-py" target="_blank" rel="noopener noreferrer">mcp-auth-py</a></li>
+          <li><a href="https://github.com/cbritt0n/loggem" target="_blank" rel="noopener noreferrer">loggem</a></li>
         </ul>
       </div>
     </nav>
 
-
     <!-- Sticky social media icons -->
-    <div class="sticky-container">
+    <aside class="sticky-container" aria-label="Social links">
       <ul class="sticky">
         <li>
-          <a href="http://www.github.com/cbritt0n" target="_blank"><img src="resources/images/github.png" width="32" height="32"></a>
+          <a href="https://www.github.com/cbritt0n" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+            <img src="resources/images/github.png" width="22" height="22" alt="">
+          </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/cbritt0n" target="_blank"><img src="resources/images/linkedin.svg" width="32" height="32"></a>
+          <a href="https://www.linkedin.com/in/cbritt0n" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+            <img src="resources/images/linkedin.svg" width="22" height="22" alt="">
+          </a>
         </li>
         <li>
-          <a href="resources/downloads/Christian-Britton.pdf" target="_blank"><img src="resources/images/cv.gif" width="32" height="32"></a>
+          <a href="resources/downloads/Christian-Britton.pdf" target="_blank" rel="noopener noreferrer" title="Resume (PDF)" aria-label="Download resume">
+            <img src="resources/images/cv.gif" width="22" height="22" alt="">
+          </a>
         </li>
       </ul>
-    </div>
-      
-    <!-- Profile Header content -->
-    <header>
-      <!-- Profile photo --> 
-      <div class="profilePhoto"> 
-        <img src="resources/images/profile.jpg" style="border-radius: 50%;" alt="Profile Picture" height="200" width="200">
-      </div>
+    </aside>
 
-      <!-- Profile details -->
-      <div class="profileHeader">
-        <h1><a href="mailto:brittonca@icloud.com">Christian Britton</a></h1>
-        <h3>Software Engineer at Cox Communications, former Cyber Security student and reseacher at UGA</h3>
-      </div>
-    </header>
-
-    <br />
-
-    <!-- Main content -->
-    <div class="section2">
-
-      <!-- Education  -->
-      <h2 class="sectionTitle">Education</h2>
-      <hr class="sectionTitleRule">
-      <hr class="sectionTitleRule2">
-
-      <div class="section2Content">
-        <!-- UGA - Master's -->
-        <div style='display: inline-flex;'>
-          <div class='child'><img src="resources/images/ugalogo.png" alt="UGA Logo" height="55" width="50"></div>
-          <div class='child'><h2 class="sectionContentTitle">University of Georgia</h2></div>
+    <div class="page">
+      <!-- Profile header -->
+      <header class="hero">
+        <div class="profilePhoto">
+          <img src="resources/images/profile.jpg" alt="Portrait of Christian Britton" width="148" height="148">
         </div>
-        <h3 class="sectionContentSubTitle"><strong>Master of Science in Computer Science | Aug 2019 - May 2021</strong></h3>
-        <p class="sectionContent"><strong>GPA:</strong> 3.95</p>
-        <p class="sectionContent"><strong>Relevant Coursework:</strong> Cyber Forensics, Secure Programming, IoT Security, Cybersecurity, Computer Networks, Advanced Algorithms, Approximation Algorithms, Computer Finance, Parallel Simulation, Financial Market Simulation</p>
-        <p class="sectionContent"><strong>Project Experience:</strong> Rust, Python, C++, C#, C, Java, JavaScript, socket programming, Spring</p>
 
-        <br />
+        <div class="profileHeader">
+          <h1><a href="mailto:cabritton04@gmail.com">Christian Britton</a></h1>
+          <p class="role">Software Engineer II at Cox Communications · Winder, GA</p>
+          <p class="contact-line">
+            <a href="mailto:cabritton04@gmail.com">cabritton04@gmail.com</a>
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="resources/downloads/Christian-Britton.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+            <a class="btn btn-ghost" href="https://www.github.com/cbritt0n" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/cbritt0n" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </header>
 
-        <!-- UGA - Bachelor's -->
-        <h3 class="sectionContentSubTitle"><strong>Bachelor of Science in Computer Science | Aug 2016 - May 2020</strong></h3>
-        <p class="sectionContent"><strong>GPA:</strong> 3.45</p>
-        <p class="sectionContent"><strong>Relevant Coursework:</strong> Computer Networks, Operating Systems, Human-Computer Interaction, Computer Architecture, Algorithms, Software Development</p>
-        <p class="sectionContent"><strong>Project Experience:</strong> Python, C++, C, Java, JavaScript, Perl, Spring</p>
-      </div>
+      <main class="sections">
+        <!-- Professional Summary -->
+        <section class="section-card" aria-labelledby="summary-title">
+          <h2 id="summary-title" class="section-title">Professional Summary</h2>
+          <div class="section-body">
+            <p class="prose">Accomplished Software Engineer with over 10 years of progressive technical experience driving the architecture, optimization, and scaling of enterprise-grade applications. Armed with a Master&rsquo;s degree in Computer Science and proven technical depth across cloud migrations (GCP/Anthos), advanced CI/CD pipeline automation, and modern AI orchestration. Demonstrates the strong system design background, cross-functional leadership, and mentorship tracking required to transition seamlessly into a Senior Software Engineer role. Expert at eliminating technical debt, mitigating enterprise security risks, and delivering resilient, high-availability platforms.</p>
+          </div>
+        </section>
 
-      <br />
+        <!-- Technical Expertise -->
+        <section class="section-card" aria-labelledby="skills-title">
+          <h2 id="skills-title" class="section-title">Technical Expertise</h2>
+          <div class="section-body skill-groups">
+            <div class="skill-group">
+              <div class="skill-label">Cloud &amp; Infrastructure</div>
+              <div class="skill-chips">
+                <span class="chip">Google Cloud Platform (GCP)</span>
+                <span class="chip">Anthos</span>
+                <span class="chip">Rancher</span>
+                <span class="chip">Docker</span>
+                <span class="chip">Kubernetes</span>
+                <span class="chip">Microservices Architecture</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="skill-label">Languages &amp; Frameworks</div>
+              <div class="skill-chips">
+                <span class="chip">Python</span>
+                <span class="chip">Java</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">jQuery</span>
+                <span class="chip">Rust</span>
+                <span class="chip">C++</span>
+                <span class="chip">C#</span>
+                <span class="chip">Spring</span>
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="skill-label">DevOps &amp; Automation</div>
+              <div class="skill-chips">
+                <span class="chip">CI/CD Pipeline Design</span>
+                <span class="chip">Jenkins</span>
+                <span class="chip">Git</span>
+                <span class="chip">New Relic</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="skill-label">AI &amp; Data Engineering</div>
+              <div class="skill-chips">
+                <span class="chip">Agentic AI Architectures</span>
+                <span class="chip">LLM Integration</span>
+                <span class="chip">Graph Databases (GDB)</span>
+                <span class="chip">Machine Learning</span>
+                <span class="chip">RESTful APIs</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="skill-label">Security &amp; Compliance</div>
+              <div class="skill-chips">
+                <span class="chip">Prisma Cloud</span>
+                <span class="chip">Vulnerability Management</span>
+                <span class="chip">Secure Programming</span>
+                <span class="chip">Cyber Forensics</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="skill-label">Methodologies &amp; Leadership</div>
+              <div class="skill-chips">
+                <span class="chip">Technical Mentorship</span>
+                <span class="chip">Agile/Scrum</span>
+                <span class="chip">Sprint Planning (Jira)</span>
+                <span class="chip">CAB Governance</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <!-- Work Experience -->
-      <h2 class="sectionTitle">Experience</h2>
-      <hr class="sectionTitleRule">
-      <hr class="sectionTitleRule2">
+        <!-- Work Experience -->
+        <section class="section-card" aria-labelledby="experience-title">
+          <h2 id="experience-title" class="section-title">Experience</h2>
+          <div class="section-body">
+            <article class="job">
+              <div class="job-header">
+                <h3 class="job-org">Cox Communications Inc.</h3>
+                <p class="job-meta">
+                  <span class="role-title">Software Engineer II</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Jul 2021 – Present</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Atlanta, GA</span>
+                </p>
+              </div>
+              <ul class="job-list">
+                <li><strong>Cloud Transformation &amp; Infrastructure:</strong> Spearheaded the end-to-end cloud migration of a mission-critical PaaS ecosystem from legacy Rancher to Google Cloud Platform (GCP/Anthos), achieving a 50% improvement in system response times and building a highly scalable foundation.</li>
+                <li><strong>Enterprise Architecture &amp; Systems Optimization:</strong> Architected an enterprise multi-tier Knowledge Management platform utilizing Python and modern JavaScript frameworks; enforced rigid MVC design principles to standardize code quality, decreasing legacy technical debt by 25%.</li>
+                <li><strong>AI/ML Innovation &amp; Strategy:</strong> Co-architected and drove the technical implementation of an internal enterprise LLM platform tailored for Sales operations. Integrated custom Graph Database (GDB) modules and machine learning pipelines to analyze complex agent data streams, delivering predictive behavioral insights directly to executive leadership.</li>
+                <li><strong>DevOps &amp; Automated Continuous Delivery:</strong> Designed, optimized, and enabled automated CI/CD pipelines via Jenkins, securing completely zero-downtime rollouts across parallel Development, QA, and Production clusters using Docker and Kubernetes.</li>
+                <li><strong>Enterprise Observability &amp; Security Hardening:</strong> Championed infrastructure monitoring transformations by deploying New Relic, cutting Mean Time to Resolution (MTTR) for critical engineering disruptions by 66%. Hardened platform landscapes using Prisma Cloud, successfully remediating 98% of security vulnerabilities and establishing automated active CVE patching.</li>
+                <li><strong>Cross-Functional Governance &amp; Mentorship:</strong> Represented the application team at weekly Change Advisory Board (CAB) meetings to guarantee zero service degradation. Actively mentored junior engineering peers and drove continuous professional development as an influential leader within the Python@Cox enterprise community.</li>
+              </ul>
+            </article>
 
-      <div class="section2Content">
-        <!-- Cox Communications -->
-        <h2 class="sectionContentTitle">Cox Communications</h2>
-        <h3 class="sectionContentSubTitle"><strong>Software Engineer II | Jul 2021 - Present</strong></h3>
-        <ul class="sectionContent" style="padding-inline-start: 15px;">
-          <li>Develop, enhance, and maintain an internal Sales Communications and Knowledge Management (KM) platform built with Python, HTML, CSS, JavaScript, and jQuery, supporting frontline, third-party, and retail sales agents.</li>
-          <li>Enforce strict Model-View-Controller (MVC) principles across the team’s technology stack.</li>
-          <li>Design and maintain CI/CD pipelines using Jenkins, supporting deployments across Development, QA, and Production environments.</li>
-          <li>Led the migration of the PaaS environment from Rancher to Google Cloud Platform (GCP/Anthos), improving scalability, reducing downtime, and streamlining deployments.</li>
-          <li>Lead and coordinate multiple projects requiring collaboration across internal and third-party teams.</li>
-          <li>Implement and monitor security controls using internal security tooling and Prisma Cloud, ensuring data integrity and platform reliability.</li>
-          <li>Perform DevOps operations, maintenance, and patching using Kubernetes and Docker.</li>
-          <li>Conduct thorough User Acceptance Testing (UAT) to ensure high-quality releases and minimize post-deployment issues.</li>
-          <li>Consume and provide feedback on REST APIs from internal and external services to ingest KM content, provide translation services, and manage user profiles.</li>
-          <li>Gather stakeholder feedback, author user stories, and continuously enhance KM platform functionality.</li>
-          <li>Partner closely with Content Administrators to evolve and optimize their use of the KM platform.</li>
-          <li>Collaborate with Sales teams to deliver tailored Knowledge Management solutions.</li>
-          <li>Apply data analytics to generate actionable insights, supporting continuous improvement in sales agent performance.</li>
-          <li>Produce weekly and monthly KPI and metrics reports for leadership.</li>
-          <li>Apply Agile methodologies to improve delivery timelines and team efficiency, using Jira for planning and execution.</li>
-          <li>Pioneered a Graph Database (GDB) initiative incorporating machine learning to extract insights from agent-generated data.</li>
-          <li>Implemented New Relic for application and infrastructure monitoring across non-production and production environments.</li>
-          <li>Participate in weekly Change Advisory Board (CAB) meetings to communicate software changes and service degradations.</li>
-          <li>Actively participate in the Python@Cox community to collaborate with peers and deepen Python expertise.</li>
-          <li>Maintain current knowledge of emerging Common Vulnerabilities and Exposures (CVEs).</li>
-          <li>Engage with mentors to expand technical, business, and sales domain knowledge.</li>
-          <li>Improved system performance by optimizing Python scripts and refining KM workflows.</li>
-          <li>Collaborated with cross-functional teams to integrate third-party APIs, improving platform functionality and user experience.</li>
-          <li>Fostered cross-functional partnerships by leading multi-team initiatives aligned with stakeholder needs.</li>
-        </ul>
-        
-        <br />
+            <article class="job">
+              <div class="job-header">
+                <h3 class="job-org">Barrow County School System</h3>
+                <p class="job-meta">
+                  <span class="role-title">Technical Analyst</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Sep 2018 – Jul 2021</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Winder, GA</span>
+                </p>
+              </div>
+              <ul class="job-list">
+                <li>Engineered, scaled, and optimized high-availability district-wide network architecture, including core switching infrastructure, robust wireless systems, and VoIP configurations.</li>
+                <li>Led the technical deployment and systems administration of complex instructional infrastructures, including state-of-the-art virtual reality (VR) labs and digital broadcast studios.</li>
+                <li>Administered identity provisioning and enterprise access controls across massive Google Workspace and Office 365 environments, guaranteeing 99.9% operational uptime.</li>
+                <li>Delivered critical tier-1/tier-2 hardware and network infrastructure troubleshooting to maximize operational continuity across school facilities.</li>
+                <li>Honored with eight consecutive &ldquo;Shining Moments&rdquo; engineering awards for unparalleled technical innovation, system reliability, and collaborative problem-solving.</li>
+              </ul>
+            </article>
 
-        <!-- Barrow County School System - Technical Analyst -->
-        <h2 class="sectionContentTitle">Barrow County School System</h2>
-        <h3 class="sectionContentSubTitle"><strong>Technical Analyst | Sep 2018 - Jul 2021</strong></h3>
-        <ul class="sectionContent" style="padding-inline-start: 15px;">
-          <li>Maintained and supported district technology assets, including desktops, laptops, Chromebooks, network switches, VR systems, and displays.</li>
-          <li>Facilitated classroom technology integration, improving instructional outcomes and teacher collaboration.</li>
-          <li>Led maintenance of advanced technology environments, including VR labs and broadcast studios.</li>
-          <li>Partnered with educators to align technology solutions with lesson plans and instructional goals.</li>
-          <li>Diagnosed and resolved complex networking issues, maintaining reliable wireless and VoIP services district-wide.</li>
-          <li>Administered user accounts across Google Workspace and Office 365 environments.</li>
-          <li>Recognized with eight “Shining Moments” awards from the Sims Academy of Innovation and Technology.</li>
-        </ul>
+            <article class="job">
+              <div class="job-header">
+                <h3 class="job-org">Barrow County School System</h3>
+                <p class="job-meta">
+                  <span class="role-title">ITS Intern / Student Intern</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Aug 2014 – Sep 2018</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Winder, GA</span>
+                </p>
+              </div>
+              <ul class="job-list">
+                <li>Orchestrated large-scale deployments of thousands of client devices across Windows, macOS, and ChromeOS using AirWatch MDM and Chrome Management Console.</li>
+                <li>Partnered with networking and academic stakeholders to build and deploy tailored multimedia software streaming platforms, minimizing learning environment technical friction.</li>
+                <li>Delivered critical tier-1/tier-2 hardware and network infrastructure troubleshooting to maximize operational continuity across school facilities.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
 
-        <br />
+        <!-- Education -->
+        <section class="section-card" aria-labelledby="education-title">
+          <h2 id="education-title" class="section-title">Education</h2>
+          <div class="section-body">
+            <div class="edu-block">
+              <div class="edu-heading">
+                <img src="resources/images/ugalogo.png" alt="University of Georgia logo" width="40" height="44">
+                <h3 class="job-org">University of Georgia</h3>
+              </div>
+              <p class="edu-degree">Master of Science in Computer Science · Graduated May 2021</p>
+              <p class="edu-detail"><strong>GPA:</strong> 3.95</p>
+              <p class="edu-detail"><strong>Specializations:</strong> Advanced Algorithms, Secure Programming, Cyber Security, IoT Security, Parallel Simulation, Computer Networks, Cyber Forensics, and Cryptography.</p>
+            </div>
 
-        <!-- Barrow County School System - ITS Intern -->
-        <h2 class="sectionContentTitle">Barrow County School System</h2>
-        <h3 class="sectionContentSubTitle"><strong>ITS Intern | Jun 2016 - Sep 2018</strong></h3>
-        <ul class="sectionContent" style="padding-inline-start: 15px;">
-          <li>Supported day-to-day maintenance and repair of Windows, macOS, and ChromeOS devices.</li>
-          <li>Installed, maintained, and repaired interactive projector systems used for classroom instruction.</li>
-          <li>Worked directly with teachers to address classroom-specific technology needs.</li>
-          <li>Supported Chromebook and iPad deployments using Chrome Management Console and AirWatch (MDM).</li>
-          <li>Assisted in the rollout of a new streaming platform for elementary schools.</li>
-          <li>Helped produce audio and video school presentations using Adobe Creative Cloud.</li>
-        </ul>
+            <div class="edu-block">
+              <p class="edu-degree">Bachelor of Science in Computer Science · Graduated May 2020</p>
+              <p class="edu-detail"><strong>GPA:</strong> 3.45</p>
+              <p class="edu-detail"><strong>Core Focus:</strong> Operating Systems, Human-Computer Interaction, Distributed Systems, Software Engineering Patterns.</p>
+            </div>
+          </div>
+        </section>
 
-        <br />
+        <!-- Certifications -->
+        <section class="section-card" aria-labelledby="certs-title">
+          <h2 id="certs-title" class="section-title">Certifications</h2>
+          <div class="section-body">
+            <p class="entry"><strong>Agentic AI Architecture Certificate</strong> — eCornell (2026) | Specialized in multi-agent LLM systems, cognitive architectures, and autonomous orchestration patterns.</p>
+          </div>
+        </section>
 
-        <!-- Barrow County School System - Student Intern -->
-        <h2 class="sectionContentTitle">Barrow County School System</h2>
-        <h3 class="sectionContentSubTitle"><strong>Student Intern | Aug 2014 - Jun 2016</strong></h3>
-        <ul class="sectionContent" style="padding-inline-start: 15px;">
-          <li>Acted as a liaison between the Technology and Teaching &amp; Learning departments.</li>
-          <li>Provided hardware and software support for Chromebooks and iPads.</li>
-          <li>Assisted with maintenance and repair of district-wide computer systems to minimize downtime.</li>
-          <li>Developed and delivered training sessions on new educational technologies for teachers.</li>
-        </ul>
+        <!-- Research and Club Affiliations -->
+        <section class="section-card" aria-labelledby="research-title">
+          <h2 id="research-title" class="section-title">Research &amp; Affiliations</h2>
+          <div class="section-body">
+            <p class="entry"><strong>Graduate Research Frameworks (UGA &amp; Georgia Tech):</strong> Conducted complex parallel simulation research optimizing computational finance architectures and examining market latency impacts across autonomous trading agent models.</p>
+            <p class="entry"><strong>Undergraduate Systems Research (UGA Dept. of Public Health):</strong> Engineered a secure, custom field-data tracking web platform and developed targeted text-mining analysis algorithms to synthesize non-mosquito epidemiological vectors.</p>
+            <p class="entry"><strong>Professional Societies &amp; Innovations:</strong> Active Member, Association for Computing Machinery (ACM) and Institute of Electrical and Electronics Engineers (IEEE). Two-time developer for UGAHacks, constructing accessible UI/UX paradigms.</p>
+          </div>
+        </section>
+      </main>
 
-      </div>
+      <footer class="site-footer">
+        <p class="footerNote">Website made by Christian Britton and hosted on GitHub Pages</p>
+      </footer>
     </div>
 
-    <br />
-
-    <hr class="sectionTitleRule">
-
-    <footer>
-      <div class="footerNote">Website made by Christian Britton and hosted on Github Pages</div>
-    </footer>
-    
     <script>
-      (function(){
+      (function () {
         var hamburger = document.getElementById('hamburger');
         var sideMenu = document.getElementById('sideMenu');
         var sideClose = document.getElementById('sideClose');
+        var backdrop = document.getElementById('menuBackdrop');
         var firstLink = sideMenu && sideMenu.querySelector('.menu-list a');
         var lastFocused = null;
 
-        function openMenu(){
+        function openMenu() {
           lastFocused = document.activeElement;
           sideMenu.classList.add('open');
           hamburger.classList.add('open');
-          hamburger.setAttribute('aria-expanded','true');
-          hamburger.setAttribute('aria-hidden','true');
-          sideMenu.setAttribute('aria-hidden','false');
-          if(firstLink) firstLink.focus();
+          hamburger.setAttribute('aria-expanded', 'true');
+          sideMenu.setAttribute('aria-hidden', 'false');
+          if (backdrop) {
+            backdrop.hidden = false;
+            backdrop.classList.add('visible');
+          }
+          if (firstLink) firstLink.focus();
         }
 
-        function closeMenu(){
+        function closeMenu() {
           sideMenu.classList.remove('open');
           hamburger.classList.remove('open');
-          hamburger.setAttribute('aria-expanded','false');
-          hamburger.setAttribute('aria-hidden','false');
-          sideMenu.setAttribute('aria-hidden','true');
-          if(lastFocused) lastFocused.focus();
+          hamburger.setAttribute('aria-expanded', 'false');
+          sideMenu.setAttribute('aria-hidden', 'true');
+          if (backdrop) {
+            backdrop.classList.remove('visible');
+            backdrop.hidden = true;
+          }
+          if (lastFocused) lastFocused.focus();
         }
 
-        if(hamburger){
-          hamburger.addEventListener('click', function(e){
+        if (hamburger) {
+          hamburger.addEventListener('click', function () {
             var expanded = hamburger.getAttribute('aria-expanded') === 'true';
-            if(expanded) closeMenu(); else openMenu();
+            if (expanded) closeMenu();
+            else openMenu();
           });
         }
 
-        if(sideClose){ sideClose.addEventListener('click', closeMenu); }
+        if (sideClose) sideClose.addEventListener('click', closeMenu);
+        if (backdrop) backdrop.addEventListener('click', closeMenu);
 
-        // Close on Escape
-        document.addEventListener('keydown', function(e){
-          if(e.key === 'Escape' && sideMenu.classList.contains('open')){ closeMenu(); }
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && sideMenu.classList.contains('open')) closeMenu();
         });
 
-        // Close when clicking outside the menu
-        document.addEventListener('click', function(e){
-          if(!sideMenu.classList.contains('open')) return;
+        document.addEventListener('click', function (e) {
+          if (!sideMenu.classList.contains('open')) return;
           var target = e.target;
-          if(target === hamburger || hamburger.contains(target)) return;
-          if(sideMenu.contains(target)) return;
+          if (target === hamburger || hamburger.contains(target)) return;
+          if (sideMenu.contains(target)) return;
           closeMenu();
         });
       })();
