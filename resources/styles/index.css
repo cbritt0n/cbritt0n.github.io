@@ -577,11 +577,6 @@ button:focus-visible {
   color: var(--accent);
 }
 
-.contact-sep {
-  color: var(--border-strong);
-  user-select: none;
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
