@@ -41,9 +41,8 @@
 
     <!-- Preload critical assets -->
     <link rel="preload" href="resources/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="resources/images/profile.jpg" as="image" fetchpriority="high">
 
-    <link href="resources/styles/index.css" rel="stylesheet" type="text/css">
+    <link href="resources/styles/index.css" rel="stylesheet">
 
     <!-- Structured data -->
     <script type="application/ld+json">
@@ -82,7 +81,7 @@
       </span>
     </button>
 
-    <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+    <div id="menuBackdrop" class="menu-backdrop"></div>
 
     <!-- Side navigation menu -->
     <nav id="sideMenu" class="side-menu" aria-hidden="true" aria-label="Site menu">
@@ -488,41 +487,31 @@
         if (yearEl) yearEl.textContent = new Date().getFullYear();
 
         /* ---- Theme toggle ---- */
+        var root = document.documentElement;
         var themeToggle = document.getElementById('themeToggle');
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
         var THEME_COLORS = { dark: '#0b0e13', light: '#f5f6fa' };
 
-        function applyThemeMeta(theme) {
-          var meta = document.querySelector('meta[name="theme-color"]');
-          if (meta) meta.setAttribute('content', THEME_COLORS[theme] || THEME_COLORS.dark);
-          if (themeToggle) {
-            themeToggle.setAttribute(
-              'aria-label',
-              theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
-            );
-          }
+        function setTheme(theme) {
+          root.setAttribute('data-theme', theme);
+          themeMeta.setAttribute('content', THEME_COLORS[theme]);
+          themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
         }
 
-        applyThemeMeta(document.documentElement.getAttribute('data-theme'));
+        setTheme(root.getAttribute('data-theme'));
 
-        if (themeToggle) {
-          themeToggle.addEventListener('click', function () {
-            var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', next);
-            try { localStorage.setItem('theme', next); } catch (e) {}
-            applyThemeMeta(next);
-          });
-        }
+        themeToggle.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+          try { localStorage.setItem('theme', next); } catch (e) {}
+          setTheme(next);
+        });
 
         // Follow OS preference changes while no explicit choice is stored
         if (window.matchMedia) {
           window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
             var stored = null;
             try { stored = localStorage.getItem('theme'); } catch (err) {}
-            if (stored !== 'light' && stored !== 'dark') {
-              var next = e.matches ? 'light' : 'dark';
-              document.documentElement.setAttribute('data-theme', next);
-              applyThemeMeta(next);
-            }
+            if (stored !== 'light' && stored !== 'dark') setTheme(e.matches ? 'light' : 'dark');
           });
         }
 
@@ -550,11 +539,8 @@
           hamburger.classList.add('open');
           hamburger.setAttribute('aria-expanded', 'true');
           sideMenu.setAttribute('aria-hidden', 'false');
-          if (backdrop) {
-            backdrop.hidden = false;
-            backdrop.classList.add('visible');
-          }
-          if (firstLink) firstLink.focus();
+          backdrop.classList.add('visible');
+          firstLink.focus();
         }
 
         function closeMenu(restoreFocus) {
@@ -562,23 +548,15 @@
           hamburger.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
           sideMenu.setAttribute('aria-hidden', 'true');
-          if (backdrop) {
-            backdrop.classList.remove('visible');
-            backdrop.hidden = true;
-          }
+          backdrop.classList.remove('visible');
           if (restoreFocus !== false && lastFocused) lastFocused.focus();
         }
 
-        if (hamburger) {
-          hamburger.addEventListener('click', function () {
-            var expanded = hamburger.getAttribute('aria-expanded') === 'true';
-            if (expanded) closeMenu();
-            else openMenu();
-          });
-        }
-
-        if (sideClose) sideClose.addEventListener('click', function () { closeMenu(); });
-        if (backdrop) backdrop.addEventListener('click', function () { closeMenu(); });
+        // The hamburger is hidden while the menu is open, so it only ever opens it;
+        // the close button, backdrop, Escape, and in-page links close it.
+        hamburger.addEventListener('click', openMenu);
+        sideClose.addEventListener('click', function () { closeMenu(); });
+        backdrop.addEventListener('click', function () { closeMenu(); });
 
         // In-page links close the menu and let the browser scroll to the section
         sideMenu.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -608,14 +586,6 @@
               first.focus();
             }
           }
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!sideMenu.classList.contains('open')) return;
-          var target = e.target;
-          if (target === hamburger || hamburger.contains(target)) return;
-          if (sideMenu.contains(target)) return;
-          closeMenu();
         });
       })();
     </script>
