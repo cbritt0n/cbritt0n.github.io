@@ -558,25 +558,6 @@ button:focus-visible {
   text-wrap: pretty;
 }
 
-.profileHeader .contact-line {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--text-soft);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.75rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.profileHeader .contact-line a {
-  color: var(--text-muted);
-}
-
-.profileHeader .contact-line a:hover {
-  color: var(--accent);
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1322,10 +1303,6 @@ button:focus-visible {
   .profileHeader {
     flex: 1;
     min-width: 0;
-  }
-
-  .profileHeader .contact-line {
-    justify-content: flex-start;
   }
 
   .hero-actions {
