@@ -1,19 +1,80 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Christian Britton — Software Engineer II at Cox Communications. Cloud, CI/CD, and AI systems.">
-    <title>Christian Britton</title>
 
-    <link rel="icon" type="image/png" href="resources/images/profile.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Apply saved/system theme before first paint to avoid a flash -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch (e) {}
+        var theme = stored === 'light' || stored === 'dark'
+          ? stored
+          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        root.setAttribute('data-theme', theme);
+        root.classList.add('js');
+      })();
+    </script>
+
+    <title>Christian Britton — Software Engineer</title>
+    <meta name="description" content="Hi, I'm Christian — a software engineer in Georgia who builds secure, dependable cloud platforms, CI/CD pipelines, and AI tools, and loves helping other engineers grow.">
+    <link rel="canonical" href="https://cbritt0n.github.io/">
+    <meta name="theme-color" content="#0b0e13">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cbritt0n.github.io/">
+    <meta property="og:title" content="Christian Britton — Software Engineer">
+    <meta property="og:description" content="I build secure, dependable software that makes people's work easier, and help the engineers around me grow along the way.">
+    <meta property="og:image" content="https://cbritt0n.github.io/resources/images/profile.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Christian Britton — Software Engineer">
+    <meta name="twitter:description" content="I build secure, dependable software that makes people's work easier, and help the engineers around me grow along the way.">
+    <meta name="twitter:image" content="https://cbritt0n.github.io/resources/images/profile.jpg">
+
+    <link rel="icon" type="image/svg+xml" href="resources/images/favicon.svg">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="resources/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="resources/images/profile.jpg" as="image" fetchpriority="high">
+
     <link href="resources/styles/index.css" rel="stylesheet" type="text/css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Christian Britton",
+        "url": "https://cbritt0n.github.io/",
+        "image": "https://cbritt0n.github.io/resources/images/profile.jpg",
+        "email": "mailto:cabritton04@gmail.com",
+        "jobTitle": "Software Engineer II",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Cox Communications"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Georgia"
+        },
+        "knowsAbout": ["Cloud infrastructure", "CI/CD", "Agentic AI", "Python", "Kubernetes", "Application security"],
+        "sameAs": [
+          "https://www.github.com/cbritt0n",
+          "https://www.linkedin.com/in/cbritt0n"
+        ]
+      }
+    </script>
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- Hamburger menu (top-left) -->
     <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="sideMenu">
       <span class="hamburger-box">
@@ -24,13 +85,24 @@
     <div id="menuBackdrop" class="menu-backdrop" hidden></div>
 
     <!-- Side navigation menu -->
-    <nav id="sideMenu" class="side-menu" aria-hidden="true" aria-label="Active projects">
+    <nav id="sideMenu" class="side-menu" aria-hidden="true" aria-label="Site menu">
       <div class="side-menu-inner">
         <button id="sideClose" class="side-close" aria-label="Close menu">&times;</button>
+
+        <h3 class="menu-section-title">On this page</h3>
+        <ul class="menu-list">
+          <li><a href="#about">About me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Toolbox</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#connect">Say hello</a></li>
+        </ul>
+
         <h3 class="menu-section-title">Active Projects</h3>
         <ul class="menu-list">
-          <li><a href="https://github.com/cbritt0n/mcp-auth-py" target="_blank" rel="noopener noreferrer">mcp-auth-py</a></li>
-          <li><a href="https://github.com/cbritt0n/loggem" target="_blank" rel="noopener noreferrer">loggem</a></li>
+          <li><a href="https://github.com/cbritt0n/mcp-auth-py" target="_blank" rel="noopener noreferrer">mcp-auth-py <span class="menu-ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/cbritt0n/loggem" target="_blank" rel="noopener noreferrer">loggem <span class="menu-ext" aria-hidden="true">↗</span></a></li>
         </ul>
       </div>
     </nav>
@@ -40,17 +112,22 @@
       <ul class="sticky">
         <li>
           <a href="https://www.github.com/cbritt0n" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
-            <img src="resources/images/github.png" width="22" height="22" alt="">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
           </a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/cbritt0n" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
-            <img src="resources/images/linkedin.svg" width="22" height="22" alt="">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:cabritton04@gmail.com" title="Email" aria-label="Email Christian">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
           </a>
         </li>
         <li>
           <a href="resources/downloads/Christian-Britton.pdf" target="_blank" rel="noopener noreferrer" title="Resume (PDF)" aria-label="Download resume">
-            <img src="resources/images/cv.gif" width="22" height="22" alt="">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
           </a>
         </li>
       </ul>
@@ -60,35 +137,206 @@
       <!-- Profile header -->
       <header class="hero">
         <div class="profilePhoto">
-          <img src="resources/images/profile.jpg" alt="Portrait of Christian Britton" width="148" height="148">
+          <img src="resources/images/profile.jpg" alt="Portrait of Christian Britton" width="148" height="148" fetchpriority="high">
         </div>
 
         <div class="profileHeader">
-          <h1><a href="mailto:cabritton04@gmail.com">Christian Britton</a></h1>
-          <p class="role">Software Engineer II at Cox Communications · Winder, GA</p>
+          <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Currently building open-source agentic AI tools</p>
+          <p class="greeting"><span class="wave" aria-hidden="true">👋</span> Hi there, I&rsquo;m</p>
+          <h1>Christian Britton</h1>
+          <p class="role">Software Engineer II at Cox Communications · Georgia, USA</p>
+          <p class="mission">My mission is simple: build secure, dependable software that makes people&rsquo;s work easier, and help the engineers around me grow along the way.</p>
           <p class="contact-line">
             <a href="mailto:cabritton04@gmail.com">cabritton04@gmail.com</a>
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="resources/downloads/Christian-Britton.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
-            <a class="btn btn-ghost" href="https://www.github.com/cbritt0n" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/cbritt0n" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="btn btn-primary" href="mailto:cabritton04@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Say hello
+            </a>
+            <a class="btn btn-ghost" href="resources/downloads/Christian-Britton.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
+            <a class="btn btn-ghost" href="#projects">See my work</a>
+            <button id="themeToggle" class="btn btn-ghost btn-icon theme-toggle" type="button" aria-label="Switch to light theme">
+              <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              <span class="sr-only">Toggle theme</span>
+            </button>
           </div>
         </div>
       </header>
 
-      <main class="sections">
-        <!-- Professional Summary -->
-        <section class="section-card" aria-labelledby="summary-title">
-          <h2 id="summary-title" class="section-title">Professional Summary</h2>
+      <main id="main" class="sections">
+        <!-- About -->
+        <section id="about" class="section-card reveal" aria-labelledby="about-title">
+          <h2 id="about-title" class="section-title">About Me</h2>
           <div class="section-body">
-            <p class="prose">Accomplished Software Engineer with over 10 years of progressive technical experience driving the architecture, optimization, and scaling of enterprise-grade applications. Armed with a Master&rsquo;s degree in Computer Science and proven technical depth across cloud migrations (GCP/Anthos), advanced CI/CD pipeline automation, and modern AI orchestration. Demonstrates the strong system design background, cross-functional leadership, and mentorship tracking required to transition seamlessly into a Senior Software Engineer role. Expert at eliminating technical debt, mitigating enterprise security risks, and delivering resilient, high-availability platforms.</p>
+            <p class="prose lead">My path into software started in 2014 as a student intern at Barrow County Schools, imaging laptops and chasing down network gremlins. More than a decade later, I&rsquo;m a software engineer at Cox Communications, where I&rsquo;ve led a platform migration to Google Cloud, helped build an internal LLM platform for our Sales teams, and cut our incident resolution time by two-thirds.</p>
+            <p class="prose">Along the way I earned my B.S. and M.S. in Computer Science from the University of Georgia. I still care about the same thing I did on day one: technology should just <em>work</em> for the people who depend on it. These days I&rsquo;m most excited about agentic AI. I build open-source tools in my spare time, and I put a lot of energy into mentoring other engineers and helping them grow.</p>
+
+            <ul class="stats" aria-label="Highlights">
+              <li class="stat">
+                <span class="stat-value">10+</span>
+                <span class="stat-label">years in tech, from help desk to cloud platforms</span>
+              </li>
+              <li class="stat">
+                <span class="stat-value">50%</span>
+                <span class="stat-label">faster response times after our GCP migration</span>
+              </li>
+              <li class="stat">
+                <span class="stat-value">66%</span>
+                <span class="stat-label">lower MTTR after rolling out New Relic</span>
+              </li>
+              <li class="stat">
+                <span class="stat-value">98%</span>
+                <span class="stat-label">of security vulnerabilities remediated</span>
+              </li>
+            </ul>
+
+            <h3 class="sub-title">What I care about</h3>
+            <ul class="values">
+              <li class="value">
+                <span class="value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.6 3.4 8.1 8 9 4.6-.9 8-4.4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+                </span>
+                <div>
+                  <h4 class="value-title">Secure by default</h4>
+                  <p class="value-text">Security isn&rsquo;t a last-minute checklist. I build it into the pipeline so the safe path is also the easy one.</p>
+                </div>
+              </li>
+              <li class="value">
+                <span class="value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>
+                </span>
+                <div>
+                  <h4 class="value-title">Built to last</h4>
+                  <p class="value-text">I like boring deploys, clear observability, and code that the next person can pick up without a tour guide.</p>
+                </div>
+              </li>
+              <li class="value">
+                <span class="value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 20a6.5 6.5 0 0 0-3-5.5"/></svg>
+                </span>
+                <div>
+                  <h4 class="value-title">Lift others up</h4>
+                  <p class="value-text">The best part of my week is helping a teammate get unstuck. Strong teams beat solo heroics every time.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="projects" class="section-card reveal" aria-labelledby="projects-title">
+          <h2 id="projects-title" class="section-title">Things I&rsquo;m Building</h2>
+          <div class="section-body">
+            <p class="section-intro">Side projects where I get to explore ideas and give a little back to the open-source community.</p>
+            <div class="project-grid">
+              <article class="project-card">
+                <div class="project-head">
+                  <span class="project-tag">Open source · Python</span>
+                  <a class="project-link-icon" href="https://github.com/cbritt0n/mcp-auth-py" target="_blank" rel="noopener noreferrer" aria-label="View mcp-auth-py on GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                  </a>
+                </div>
+                <h3 class="project-name"><a class="stretched-link" href="https://github.com/cbritt0n/mcp-auth-py" target="_blank" rel="noopener noreferrer">mcp-auth-py</a></h3>
+                <p class="project-desc">Plug-and-play authentication, authorization, and rate-limiting for FastAPI/ASGI apps. Swap between Local JWT, Google, AWS Cognito, Azure AD, GitHub, or Discord providers without touching your application code.</p>
+                <ul class="project-chips">
+                  <li><span class="chip">FastAPI / ASGI</span></li>
+                  <li><span class="chip">OAuth2 / OIDC</span></li>
+                  <li><span class="chip">RBAC</span></li>
+                  <li><span class="chip">Redis Caching</span></li>
+                </ul>
+              </article>
+
+              <article class="project-card">
+                <div class="project-head">
+                  <span class="project-tag">Open source · AI</span>
+                  <a class="project-link-icon" href="https://github.com/cbritt0n/loggem" target="_blank" rel="noopener noreferrer" aria-label="View loggem on GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                  </a>
+                </div>
+                <h3 class="project-name"><a class="stretched-link" href="https://github.com/cbritt0n/loggem" target="_blank" rel="noopener noreferrer">loggem</a></h3>
+                <p class="project-desc">AI-powered log anomaly detection that runs locally or in the cloud, with real-time streaming, 12 built-in parsers, multi-channel alerting, and privacy-first offline analysis.</p>
+                <ul class="project-chips">
+                  <li><span class="chip">LLM Providers</span></li>
+                  <li><span class="chip">Log Parsing</span></li>
+                  <li><span class="chip">Real-Time Streaming</span></li>
+                  <li><span class="chip">Alerting</span></li>
+                </ul>
+              </article>
+            </div>
+            <a class="more-link" href="https://www.github.com/cbritt0n" target="_blank" rel="noopener noreferrer">More on my GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience" class="section-card reveal" aria-labelledby="experience-title">
+          <h2 id="experience-title" class="section-title">Where I&rsquo;ve Worked</h2>
+          <div class="section-body timeline">
+            <article class="job is-current">
+              <div class="job-header">
+                <h3 class="job-org">Cox Communications Inc.</h3>
+                <p class="job-meta">
+                  <span class="role-title">Software Engineer II</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Jul 2021 – Present</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Atlanta, GA</span>
+                </p>
+              </div>
+              <ul class="job-list">
+                <li><strong>Cloud transformation:</strong> Led the end-to-end migration of a mission-critical PaaS ecosystem from legacy Rancher to Google Cloud (GCP/Anthos), improving system response times by 50% and giving us a foundation that scales.</li>
+                <li><strong>Architecture &amp; code quality:</strong> Architected a multi-tier Knowledge Management platform in Python and modern JavaScript, and standardized on clean MVC patterns that reduced legacy technical debt by 25%.</li>
+                <li><strong>AI/ML innovation:</strong> Co-architected an internal enterprise LLM platform for Sales operations, integrating graph database modules and ML pipelines that turn complex agent data into predictive insights for leadership.</li>
+                <li><strong>CI/CD &amp; delivery:</strong> Designed automated Jenkins pipelines that deliver zero-downtime rollouts across Dev, QA, and Production clusters on Docker and Kubernetes.</li>
+                <li><strong>Observability &amp; security:</strong> Rolled out New Relic and cut mean time to resolution by 66%. Hardened our platforms with Prisma Cloud, remediating 98% of vulnerabilities and automating CVE patching.</li>
+                <li><strong>Governance &amp; mentorship:</strong> Represent my team at weekly Change Advisory Board meetings, mentor junior engineers, and stay active as a leader in the Python@Cox community.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <div class="job-header">
+                <h3 class="job-org">Barrow County School System</h3>
+                <p class="job-meta">
+                  <span class="role-title">Technical Analyst</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Sep 2018 – Jul 2021</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Winder, GA</span>
+                </p>
+              </div>
+              <ul class="job-list">
+                <li>Engineered and scaled district-wide network architecture, including core switching, wireless, and VoIP.</li>
+                <li>Led deployment and administration of instructional technology like virtual reality (VR) labs and digital broadcast studios.</li>
+                <li>Managed identity provisioning and access controls across Google Workspace and Office 365, maintaining 99.9% uptime.</li>
+                <li>Provided tier-1/tier-2 hardware and network troubleshooting to keep classrooms and offices running smoothly.</li>
+                <li>Received eight consecutive &ldquo;Shining Moments&rdquo; awards for innovation, reliability, and collaborative problem-solving.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <div class="job-header">
+                <h3 class="job-org">Barrow County School System</h3>
+                <p class="job-meta">
+                  <span class="role-title">ITS Intern / Student Intern</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Aug 2014 – Sep 2018</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Winder, GA</span>
+                </p>
+              </div>
+              <ul class="job-list">
+                <li>Where it all started. Deployed thousands of Windows, macOS, and ChromeOS devices using AirWatch MDM and the Chrome Management Console.</li>
+                <li>Partnered with networking and academic teams to roll out multimedia streaming platforms for classrooms.</li>
+                <li>Troubleshot hardware and network issues across school facilities and learned how much good IT matters to the people who rely on it.</li>
+              </ul>
+            </article>
           </div>
         </section>
 
         <!-- Technical Expertise -->
-        <section class="section-card" aria-labelledby="skills-title">
-          <h2 id="skills-title" class="section-title">Technical Expertise</h2>
+        <section id="skills" class="section-card reveal" aria-labelledby="skills-title">
+          <h2 id="skills-title" class="section-title">My Toolbox</h2>
           <div class="section-body skill-groups">
             <div class="skill-group">
               <div class="skill-label">Cloud &amp; Infrastructure</div>
@@ -145,7 +393,7 @@
               </div>
             </div>
             <div class="skill-group">
-              <div class="skill-label">Methodologies &amp; Leadership</div>
+              <div class="skill-label">Ways of Working</div>
               <div class="skill-chips">
                 <span class="chip">Technical Mentorship</span>
                 <span class="chip">Agile/Scrum</span>
@@ -156,114 +404,73 @@
           </div>
         </section>
 
-        <!-- Work Experience -->
-        <section class="section-card" aria-labelledby="experience-title">
-          <h2 id="experience-title" class="section-title">Experience</h2>
-          <div class="section-body">
-            <article class="job">
-              <div class="job-header">
-                <h3 class="job-org">Cox Communications Inc.</h3>
-                <p class="job-meta">
-                  <span class="role-title">Software Engineer II</span>
-                  <span aria-hidden="true">·</span>
-                  <span>Jul 2021 – Present</span>
-                  <span aria-hidden="true">·</span>
-                  <span>Atlanta, GA</span>
-                </p>
-              </div>
-              <ul class="job-list">
-                <li><strong>Cloud Transformation &amp; Infrastructure:</strong> Spearheaded the end-to-end cloud migration of a mission-critical PaaS ecosystem from legacy Rancher to Google Cloud Platform (GCP/Anthos), achieving a 50% improvement in system response times and building a highly scalable foundation.</li>
-                <li><strong>Enterprise Architecture &amp; Systems Optimization:</strong> Architected an enterprise multi-tier Knowledge Management platform utilizing Python and modern JavaScript frameworks; enforced rigid MVC design principles to standardize code quality, decreasing legacy technical debt by 25%.</li>
-                <li><strong>AI/ML Innovation &amp; Strategy:</strong> Co-architected and drove the technical implementation of an internal enterprise LLM platform tailored for Sales operations. Integrated custom Graph Database (GDB) modules and machine learning pipelines to analyze complex agent data streams, delivering predictive behavioral insights directly to executive leadership.</li>
-                <li><strong>DevOps &amp; Automated Continuous Delivery:</strong> Designed, optimized, and enabled automated CI/CD pipelines via Jenkins, securing completely zero-downtime rollouts across parallel Development, QA, and Production clusters using Docker and Kubernetes.</li>
-                <li><strong>Enterprise Observability &amp; Security Hardening:</strong> Championed infrastructure monitoring transformations by deploying New Relic, cutting Mean Time to Resolution (MTTR) for critical engineering disruptions by 66%. Hardened platform landscapes using Prisma Cloud, successfully remediating 98% of security vulnerabilities and establishing automated active CVE patching.</li>
-                <li><strong>Cross-Functional Governance &amp; Mentorship:</strong> Represented the application team at weekly Change Advisory Board (CAB) meetings to guarantee zero service degradation. Actively mentored junior engineering peers and drove continuous professional development as an influential leader within the Python@Cox enterprise community.</li>
-              </ul>
-            </article>
-
-            <article class="job">
-              <div class="job-header">
-                <h3 class="job-org">Barrow County School System</h3>
-                <p class="job-meta">
-                  <span class="role-title">Technical Analyst</span>
-                  <span aria-hidden="true">·</span>
-                  <span>Sep 2018 – Jul 2021</span>
-                  <span aria-hidden="true">·</span>
-                  <span>Winder, GA</span>
-                </p>
-              </div>
-              <ul class="job-list">
-                <li>Engineered, scaled, and optimized high-availability district-wide network architecture, including core switching infrastructure, robust wireless systems, and VoIP configurations.</li>
-                <li>Led the technical deployment and systems administration of complex instructional infrastructures, including state-of-the-art virtual reality (VR) labs and digital broadcast studios.</li>
-                <li>Administered identity provisioning and enterprise access controls across massive Google Workspace and Office 365 environments, guaranteeing 99.9% operational uptime.</li>
-                <li>Delivered critical tier-1/tier-2 hardware and network infrastructure troubleshooting to maximize operational continuity across school facilities.</li>
-                <li>Honored with eight consecutive &ldquo;Shining Moments&rdquo; engineering awards for unparalleled technical innovation, system reliability, and collaborative problem-solving.</li>
-              </ul>
-            </article>
-
-            <article class="job">
-              <div class="job-header">
-                <h3 class="job-org">Barrow County School System</h3>
-                <p class="job-meta">
-                  <span class="role-title">ITS Intern / Student Intern</span>
-                  <span aria-hidden="true">·</span>
-                  <span>Aug 2014 – Sep 2018</span>
-                  <span aria-hidden="true">·</span>
-                  <span>Winder, GA</span>
-                </p>
-              </div>
-              <ul class="job-list">
-                <li>Orchestrated large-scale deployments of thousands of client devices across Windows, macOS, and ChromeOS using AirWatch MDM and Chrome Management Console.</li>
-                <li>Partnered with networking and academic stakeholders to build and deploy tailored multimedia software streaming platforms, minimizing learning environment technical friction.</li>
-                <li>Delivered critical tier-1/tier-2 hardware and network infrastructure troubleshooting to maximize operational continuity across school facilities.</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
         <!-- Education -->
-        <section class="section-card" aria-labelledby="education-title">
+        <section id="education" class="section-card reveal" aria-labelledby="education-title">
           <h2 id="education-title" class="section-title">Education</h2>
           <div class="section-body">
-            <div class="edu-block">
-              <div class="edu-heading">
-                <img src="resources/images/ugalogo.png" alt="University of Georgia logo" width="40" height="44">
+            <div class="edu-heading">
+              <img src="resources/images/ugalogo.png" alt="University of Georgia logo" width="40" height="44" loading="lazy" decoding="async">
+              <div>
                 <h3 class="job-org">University of Georgia</h3>
+                <p class="edu-sub">Go Dawgs! Where I earned both of my CS degrees.</p>
               </div>
-              <p class="edu-degree">Master of Science in Computer Science · Graduated May 2021</p>
-              <p class="edu-detail"><strong>GPA:</strong> 3.95</p>
-              <p class="edu-detail"><strong>Specializations:</strong> Advanced Algorithms, Secure Programming, Cyber Security, IoT Security, Parallel Simulation, Computer Networks, Cyber Forensics, and Cryptography.</p>
             </div>
 
-            <div class="edu-block">
-              <p class="edu-degree">Bachelor of Science in Computer Science · Graduated May 2020</p>
-              <p class="edu-detail"><strong>GPA:</strong> 3.45</p>
-              <p class="edu-detail"><strong>Core Focus:</strong> Operating Systems, Human-Computer Interaction, Distributed Systems, Software Engineering Patterns.</p>
+            <div class="edu-grid">
+              <div class="edu-block">
+                <p class="edu-degree">M.S. Computer Science</p>
+                <p class="edu-meta">Graduated May 2021 · GPA 3.95</p>
+                <p class="edu-detail">Advanced Algorithms, Secure Programming, Cyber Security, IoT Security, Parallel Simulation, Computer Networks, Cyber Forensics, and Cryptography.</p>
+              </div>
+
+              <div class="edu-block">
+                <p class="edu-degree">B.S. Computer Science</p>
+                <p class="edu-meta">Graduated May 2020 · GPA 3.45</p>
+                <p class="edu-detail">Operating Systems, Human-Computer Interaction, Distributed Systems, and Software Engineering Patterns.</p>
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- Certifications -->
-        <section class="section-card" aria-labelledby="certs-title">
-          <h2 id="certs-title" class="section-title">Certifications</h2>
+        <!-- Certifications + Research -->
+        <section class="section-card reveal" aria-labelledby="research-title">
+          <h2 id="research-title" class="section-title">Learning &amp; Research</h2>
           <div class="section-body">
-            <p class="entry"><strong>Agentic AI Architecture Certificate</strong> — eCornell (2026) | Specialized in multi-agent LLM systems, cognitive architectures, and autonomous orchestration patterns.</p>
+            <div class="entry">
+              <span class="entry-badge">Certificate · 2026</span>
+              <p><strong>Agentic AI Architecture</strong>, eCornell. A deep dive into multi-agent LLM systems, cognitive architectures, and autonomous orchestration patterns.</p>
+            </div>
+            <div class="entry">
+              <span class="entry-badge">Graduate research</span>
+              <p><strong>UGA &amp; Georgia Tech:</strong> Parallel simulation research on computational finance architectures, examining how market latency affects autonomous trading agents.</p>
+            </div>
+            <div class="entry">
+              <span class="entry-badge">Undergraduate research</span>
+              <p><strong>UGA Dept. of Public Health:</strong> Built a secure field-data tracking web platform and text-mining algorithms to study non-mosquito epidemiological vectors.</p>
+            </div>
+            <div class="entry">
+              <span class="entry-badge">Community</span>
+              <p><strong>ACM &amp; IEEE member</strong>, and a two-time UGAHacks developer focused on building accessible UI/UX.</p>
+            </div>
           </div>
         </section>
 
-        <!-- Research and Club Affiliations -->
-        <section class="section-card" aria-labelledby="research-title">
-          <h2 id="research-title" class="section-title">Research &amp; Affiliations</h2>
-          <div class="section-body">
-            <p class="entry"><strong>Graduate Research Frameworks (UGA &amp; Georgia Tech):</strong> Conducted complex parallel simulation research optimizing computational finance architectures and examining market latency impacts across autonomous trading agent models.</p>
-            <p class="entry"><strong>Undergraduate Systems Research (UGA Dept. of Public Health):</strong> Engineered a secure, custom field-data tracking web platform and developed targeted text-mining analysis algorithms to synthesize non-mosquito epidemiological vectors.</p>
-            <p class="entry"><strong>Professional Societies &amp; Innovations:</strong> Active Member, Association for Computing Machinery (ACM) and Institute of Electrical and Electronics Engineers (IEEE). Two-time developer for UGAHacks, constructing accessible UI/UX paradigms.</p>
+        <!-- Connect -->
+        <section id="connect" class="section-card connect-card reveal" aria-labelledby="connect-title">
+          <h2 id="connect-title" class="connect-title">Let&rsquo;s build something together</h2>
+          <p class="connect-text">Whether it&rsquo;s a cloud migration, an AI idea you want to talk through, or just swapping notes about Python, my inbox is always open. I&rsquo;d love to hear from you.</p>
+          <div class="hero-actions connect-actions">
+            <a class="btn btn-primary" href="mailto:cabritton04@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              cabritton04@gmail.com
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/cbritt0n" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p class="footerNote">Website made by Christian Britton and hosted on GitHub Pages</p>
+        <p class="footerNote">&copy; <span id="year">2026</span> Christian Britton · Designed and built by hand</p>
       </footer>
     </div>
 
@@ -276,6 +483,67 @@
         var firstLink = sideMenu && sideMenu.querySelector('.menu-list a');
         var lastFocused = null;
 
+        /* ---- Footer year ---- */
+        var yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        /* ---- Theme toggle ---- */
+        var themeToggle = document.getElementById('themeToggle');
+        var THEME_COLORS = { dark: '#0b0e13', light: '#f5f6fa' };
+
+        function applyThemeMeta(theme) {
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', THEME_COLORS[theme] || THEME_COLORS.dark);
+          if (themeToggle) {
+            themeToggle.setAttribute(
+              'aria-label',
+              theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+            );
+          }
+        }
+
+        applyThemeMeta(document.documentElement.getAttribute('data-theme'));
+
+        if (themeToggle) {
+          themeToggle.addEventListener('click', function () {
+            var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+            applyThemeMeta(next);
+          });
+        }
+
+        // Follow OS preference changes while no explicit choice is stored
+        if (window.matchMedia) {
+          window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (err) {}
+            if (stored !== 'light' && stored !== 'dark') {
+              var next = e.matches ? 'light' : 'dark';
+              document.documentElement.setAttribute('data-theme', next);
+              applyThemeMeta(next);
+            }
+          });
+        }
+
+        /* ---- Reveal sections on scroll ---- */
+        var revealEls = document.querySelectorAll('.reveal');
+        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!('IntersectionObserver' in window) || reduceMotion) {
+          revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+        } else {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+          revealEls.forEach(function (el) { observer.observe(el); });
+        }
+
+        /* ---- Side menu ---- */
         function openMenu() {
           lastFocused = document.activeElement;
           sideMenu.classList.add('open');
@@ -289,7 +557,7 @@
           if (firstLink) firstLink.focus();
         }
 
-        function closeMenu() {
+        function closeMenu(restoreFocus) {
           sideMenu.classList.remove('open');
           hamburger.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
@@ -298,7 +566,7 @@
             backdrop.classList.remove('visible');
             backdrop.hidden = true;
           }
-          if (lastFocused) lastFocused.focus();
+          if (restoreFocus !== false && lastFocused) lastFocused.focus();
         }
 
         if (hamburger) {
@@ -309,11 +577,37 @@
           });
         }
 
-        if (sideClose) sideClose.addEventListener('click', closeMenu);
-        if (backdrop) backdrop.addEventListener('click', closeMenu);
+        if (sideClose) sideClose.addEventListener('click', function () { closeMenu(); });
+        if (backdrop) backdrop.addEventListener('click', function () { closeMenu(); });
 
+        // In-page links close the menu and let the browser scroll to the section
+        sideMenu.querySelectorAll('a[href^="#"]').forEach(function (link) {
+          link.addEventListener('click', function () { closeMenu(false); });
+        });
+
+        // Escape closes the menu; Tab is trapped inside it while open
         document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && sideMenu.classList.contains('open')) closeMenu();
+          if (!sideMenu.classList.contains('open')) return;
+
+          if (e.key === 'Escape') {
+            closeMenu();
+            return;
+          }
+
+          if (e.key === 'Tab') {
+            var focusable = sideMenu.querySelectorAll('a[href], button:not([disabled])');
+            if (!focusable.length) return;
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
         });
 
         document.addEventListener('click', function (e) {
